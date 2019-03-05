@@ -5,14 +5,15 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-public class SecurityConfiguration {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    // @Override
-    // protected void configure(HttpSecurity httpSecurity) throws Exception {
-        // httpSecurity.authorizeRequests().antMatchers("*").permitAll();
-
-        // httpSecurity.csrf().disable();
-       // httpSecurity.headers().frameOptions().disable();
-   // }
+    @Override
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+		 httpSecurity
+            .authorizeRequests()
+                .anyRequest().permitAll();
+        httpSecurity.csrf().disable();
+        httpSecurity.headers().frameOptions().disable();
+    }
 
 }
