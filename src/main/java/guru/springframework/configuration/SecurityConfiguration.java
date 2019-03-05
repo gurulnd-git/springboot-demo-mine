@@ -7,12 +7,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfiguration {
 
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().antMatchers("*").permitAll();
+    // @Override
+    // protected void configure(HttpSecurity httpSecurity) throws Exception {
+        // httpSecurity.authorizeRequests().antMatchers("*").permitAll();
 
-        httpSecurity.csrf().disable();
-        httpSecurity.headers().frameOptions().disable();
-    }
+        // httpSecurity.csrf().disable();
+       // httpSecurity.headers().frameOptions().disable();
+   // }
 
 }
